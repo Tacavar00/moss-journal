@@ -1,0 +1,14 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="240" fill="#101912"/>
+  <rect x="92" y="92" width="840" height="840" rx="212" fill="url(#paint0_linear)" fill-opacity="0.08" stroke="#DCE8D5" stroke-opacity="0.12" stroke-width="12"/>
+  <path d="M512 238C469 309 445 357 445 413C445 469 473 505 512 561C551 505 579 469 579 413C579 357 555 309 512 238Z" fill="#7ECB88"/>
+  <path d="M403 388C334 416 286 474 286 555C286 678 381 770 512 770C643 770 738 678 738 555C738 474 690 416 621 388C633 430 634 461 619 507C592 589 524 648 512 660C500 648 432 589 405 507C390 461 391 430 403 388Z" fill="#C6DB7B"/>
+  <path d="M352 607C399 565 434 547 512 547C590 547 625 565 672 607" stroke="#101912" stroke-opacity="0.24" stroke-width="28" stroke-linecap="round"/>
+  <text x="512" y="864" text-anchor="middle" fill="#F5F6EF" font-family="Arial, sans-serif" font-size="114" font-weight="700" letter-spacing="-0.08em">MOSS</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="176" y1="120" x2="842" y2="922" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7ECB88"/>
+      <stop offset="1" stop-color="#C6DB7B"/>
+    </linearGradient>
+  </defs>
+</svg>

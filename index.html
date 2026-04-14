@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moss Journal | Private Cannabis Wellness Tracker</title>
+    <meta
+      name="description"
+      content="Moss Journal is a private, local-first cannabis wellness tracker for dosing, effects, tolerance breaks, and encrypted backups."
+    />
+    <meta property="og:title" content="Moss Journal | Private Cannabis Wellness Tracker" />
+    <meta
+      property="og:description"
+      content="Track sessions, understand your patterns, and run tolerance breaks without giving up your data."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#101912" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Moss Journal" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <div>
+            <p class="eyebrow">Cannabis wellness, without the exposure</p>
+            <a href="#workspace" class="brand">Moss Journal</a>
+          </div>
+          <div class="topbar-actions">
+            <a href="#story" class="ghost-link">How it works</a>
+            <a href="#workspace" class="primary-link">Open the tracker</a>
+          </div>
+        </nav>
+
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <p class="section-kicker">Local-first wellness tracker</p>
+            <h1>Your cannabis wellness journey. Private, personal, yours.</h1>
+            <p class="hero-summary">
+              Log sessions, measure what actually helps, and run tolerance breaks without
+              handing your behavior to a third party. By default, your data stays on this
+              device.
+            </p>
+            <div class="hero-actions">
+              <a href="#workspace" class="cta-primary">Start logging</a>
+              <a href="#privacy" class="cta-secondary">See the privacy model</a>
+            </div>
+            <ul class="hero-points">
+              <li>Built for seniors, medical patients, and women 35+</li>
+              <li>Effect tracking for sleep, pain, anxiety, mood, and focus</li>
+              <li>T-break mode with symptom logging and re-entry guidance</li>
+            </ul>
+          </section>
+
+          <section class="hero-preview" aria-label="App preview">
+            <div class="preview-card pulse-card">
+              <div class="preview-row">
+                <span class="preview-label">Tonight's pattern</span>
+                <span class="preview-chip">Local only</span>
+              </div>
+              <h2>10mg edible + low-dose re-entry notes is your strongest sleep stack.</h2>
+              <p>
+                Based on your last six sessions, this pattern improved sleep by 2.4 points
+                over your weekly baseline.
+              </p>
+              <div class="mini-bars">
+                <div>
+                  <span>Sleep</span>
+                  <strong>8.9</strong>
+                </div>
+                <div>
+                  <span>Pain</span>
+                  <strong>6.8</strong>
+                </div>
+                <div>
+                  <span>Calm</span>
+                  <strong>8.4</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-grid">
+              <article class="preview-note">
+                <p class="preview-label">Break mode</p>
+                <strong>Day 9</strong>
+                <span>Mild irritability, better sleep onset, cravings dropping.</span>
+              </article>
+              <article class="preview-note">
+                <p class="preview-label">Export ready</p>
+                <strong>Doctor summary</strong>
+                <span>CSV and encrypted backup available in one click.</span>
+              </article>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <main>
+        <section id="story" class="story-strip">
+          <article>
+            <p class="section-kicker">Why this matters</p>
+            <h2>The market is huge. The UX is still broken.</h2>
+          </article>
+          <article>
+            <p>
+              Most cannabis apps feel clinical, transactional, or risky. Moss Journal takes
+              the opposite approach: no sales, no public profile, no default cloud sync,
+              and no shame-coded language.
+            </p>
+          </article>
+        </section>
+
+        <section class="value-grid">
+          <article>
+            <span class="value-number">01</span>
+            <h3>Session intelligence</h3>
+            <p>Track product, strain, dose, method, time, and the outcomes that matter.</p>
+          </article>
+          <article>
+            <span class="value-number">02</span>
+            <h3>Useful insights</h3>
+            <p>Turn raw logs into pattern detection instead of a pile of entries.</p>
+          </article>
+          <article>
+            <span class="value-number">03</span>
+            <h3>T-break support</h3>
+            <p>Guide people through a real reset with streaks, symptom notes, and re-entry.</p>
+          </article>
+          <article>
+            <span class="value-number">04</span>
+            <h3>Private by default</h3>
+            <p>Your data stays here unless you explicitly export or back it up.</p>
+          </article>
+        </section>
+
+        <section id="workspace" class="workspace">
+          <div class="workspace-header">
+            <div>
+              <p class="section-kicker">Working MVP</p>
+              <h2>Journal, insights, break mode, and backup in one surface.</h2>
+            </div>
+            <p class="workspace-note">
+              Nothing leaves your device unless you export it. Reloading the page keeps your
+              journal intact.
+            </p>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="dashboard-panel">
+              <p class="panel-label">Sessions logged</p>
+              <strong id="session-count">0</strong>
+              <span id="last-session-label">No sessions yet</span>
+            </article>
+            <article class="dashboard-panel">
+              <p class="panel-label">Top outcome</p>
+              <strong id="top-outcome-label">Waiting for data</strong>
+              <span id="top-outcome-detail">Log a few sessions to unlock it.</span>
+            </article>
+            <article class="dashboard-panel">
+              <p class="panel-label">Break streak</p>
+              <strong id="break-streak-label">0 days</strong>
+              <span id="break-streak-detail">Start a tolerance break when ready.</span>
+            </article>
+            <article class="dashboard-panel">
+              <p class="panel-label">Backup status</p>
+              <strong id="backup-status-label">Local only</strong>
+              <span>Encrypted export available below.</span>
+            </article>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Tracker views">
+            <button class="tab-button active" data-tab-target="journal-panel" role="tab" aria-selected="true">
+              Journal
+            </button>
+            <button class="tab-button" data-tab-target="insights-panel" role="tab" aria-selected="false">
+              Insights
+            </button>
+            <button class="tab-button" data-tab-target="break-panel" role="tab" aria-selected="false">
+              T-break
+            </button>
+            <button class="tab-button" data-tab-target="backup-panel" role="tab" aria-selected="false">
+              Backup
+            </button>
+          </div>
+
+          <div id="status-banner" class="status-banner" aria-live="polite"></div>
+
+          <section id="journal-panel" class="tab-panel active" role="tabpanel">
+            <div class="panel-grid">
+              <form id="session-form" class="app-panel app-form">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Session log</p>
+                    <h3>Capture what you took and how it landed.</h3>
+                  </div>
+                  <button type="button" id="load-demo-button" class="inline-button">Load demo data</button>
+                </div>
+
+                <div class="form-grid">
+                  <label>
+                    Product
+                    <input name="productName" type="text" placeholder="Night gummies" required />
+                  </label>
+                  <label>
+                    Strain or formula
+                    <input name="strainName" type="text" placeholder="Blue Dream / CBD:THC 1:1" />
+                  </label>
+                  <label>
+                    Dose
+                    <div class="input-with-suffix">
+                      <input name="dose" type="number" min="0" step="0.1" placeholder="10" required />
+                      <span>mg</span>
+                    </div>
+                  </label>
+                  <label>
+                    Method
+                    <select name="method" required>
+                      <option value="Edible">Edible</option>
+                      <option value="Vape">Vape</option>
+                      <option value="Flower">Flower</option>
+                      <option value="Tincture">Tincture</option>
+                      <option value="Capsule">Capsule</option>
+                      <option value="Topical">Topical</option>
+                    </select>
+                  </label>
+                  <label>
+                    Time
+                    <input name="sessionAt" type="datetime-local" required />
+                  </label>
+                  <label>
+                    Context
+                    <input name="contextTag" type="text" placeholder="Sleep / post-work / pain flare" />
+                  </label>
+                </div>
+
+                <div class="slider-grid">
+                  <label>
+                    Sleep support
+                    <input name="sleep" type="range" min="1" max="10" value="6" />
+                    <output data-output-for="sleep">6</output>
+                  </label>
+                  <label>
+                    Pain relief
+                    <input name="pain" type="range" min="1" max="10" value="6" />
+                    <output data-output-for="pain">6</output>
+                  </label>
+                  <label>
+                    Anxiety relief
+                    <input name="anxiety" type="range" min="1" max="10" value="6" />
+                    <output data-output-for="anxiety">6</output>
+                  </label>
+                  <label>
+                    Mood lift
+                    <input name="mood" type="range" min="1" max="10" value="6" />
+                    <output data-output-for="mood">6</output>
+                  </label>
+                  <label>
+                    Focus
+                    <input name="focus" type="range" min="1" max="10" value="6" />
+                    <output data-output-for="focus">6</output>
+                  </label>
+                </div>
+
+                <label class="notes-field">
+                  Notes
+                  <textarea
+                    name="notes"
+                    rows="4"
+                    placeholder="What happened? Onset, side effects, appetite, sleep quality, anything worth remembering."
+                  ></textarea>
+                </label>
+
+                <button type="submit" class="cta-primary wide-button">Save session</button>
+              </form>
+
+              <section class="app-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Timeline</p>
+                    <h3>Your recent sessions</h3>
+                  </div>
+                </div>
+                <div id="session-list" class="session-list"></div>
+              </section>
+            </div>
+          </section>
+
+          <section id="insights-panel" class="tab-panel" role="tabpanel" hidden>
+            <div class="panel-grid">
+              <section class="app-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Pattern detection</p>
+                    <h3>What your journal is saying</h3>
+                  </div>
+                  <button id="export-csv-button" type="button" class="inline-button">Export doctor CSV</button>
+                </div>
+                <div id="insight-list" class="insight-list"></div>
+              </section>
+
+              <section class="app-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Outcome map</p>
+                    <h3>Average effect profile</h3>
+                  </div>
+                </div>
+                <div id="effect-summary" class="effect-summary"></div>
+              </section>
+            </div>
+          </section>
+
+          <section id="break-panel" class="tab-panel" role="tabpanel" hidden>
+            <div class="panel-grid">
+              <form id="break-form" class="app-panel app-form">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Tolerance break</p>
+                    <h3>Reset with structure, not guesswork.</h3>
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <label>
+                    Start date
+                    <input name="startDate" type="date" required />
+                  </label>
+                  <label>
+                    Target length
+                    <div class="input-with-suffix">
+                      <input name="targetDays" type="number" min="3" max="90" step="1" value="14" required />
+                      <span>days</span>
+                    </div>
+                  </label>
+                  <label class="span-two">
+                    Goal
+                    <input name="goal" type="text" placeholder="Reset tolerance, improve sleep baseline, reduce weekday use" />
+                  </label>
+                </div>
+                <button type="submit" class="cta-primary wide-button">Start or update break</button>
+              </form>
+
+              <section class="app-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Current plan</p>
+                    <h3 id="break-plan-title">No active break</h3>
+                  </div>
+                </div>
+                <div id="break-summary" class="break-summary"></div>
+              </section>
+
+              <form id="symptom-form" class="app-panel app-form">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Symptom log</p>
+                    <h3>Track the hard part while it is happening.</h3>
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <label>
+                    Log date
+                    <input name="logDate" type="date" required />
+                  </label>
+                  <label>
+                    Severity
+                    <div class="input-with-suffix">
+                      <input name="severity" type="number" min="1" max="10" step="1" value="4" required />
+                      <span>/10</span>
+                    </div>
+                  </label>
+                  <label class="span-two">
+                    Symptom note
+                    <input name="symptomNote" type="text" placeholder="Irritability, headache, vivid dreams, appetite dip" required />
+                  </label>
+                </div>
+                <button type="submit" class="cta-secondary wide-button">Add symptom note</button>
+              </form>
+
+              <section class="app-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Re-entry protocol</p>
+                    <h3>Ease back in without blowing the reset.</h3>
+                  </div>
+                </div>
+                <ol id="reentry-list" class="reentry-list"></ol>
+                <div id="symptom-list" class="symptom-list"></div>
+              </section>
+            </div>
+          </section>
+
+          <section id="backup-panel" class="tab-panel" role="tabpanel" hidden>
+            <div class="panel-grid">
+              <section class="app-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Private backup</p>
+                    <h3>Keep control, even if you sync manually.</h3>
+                  </div>
+                </div>
+                <p class="panel-copy">
+                  Export your journal in plain JSON or as an encrypted package secured with a
+                  passphrase. Store that file anywhere you want.
+                </p>
+                <div class="backup-actions">
+                  <button id="export-json-button" type="button" class="inline-button">Download JSON</button>
+                  <button id="export-encrypted-button" type="button" class="inline-button">Download encrypted backup</button>
+                </div>
+                <label class="notes-field compact">
+                  Encryption passphrase
+                  <input id="backup-passphrase" type="password" placeholder="Create a passphrase for export or import" />
+                </label>
+              </section>
+
+              <section class="app-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="panel-label">Restore</p>
+                    <h3>Import an encrypted backup</h3>
+                  </div>
+                </div>
+                <label class="notes-field compact">
+                  Paste encrypted backup JSON
+                  <textarea id="backup-import-text" rows="10" placeholder='{"version":"1","payload":"..."}'></textarea>
+                </label>
+                <button id="import-encrypted-button" type="button" class="cta-secondary wide-button">
+                  Import encrypted backup
+                </button>
+              </section>
+            </div>
+          </section>
+        </section>
+
+        <section id="privacy" class="privacy-strip">
+          <article>
+            <p class="section-kicker">Privacy-first by design</p>
+            <h2>Built for people who will not use a cannabis app if it feels risky.</h2>
+          </article>
+          <article class="privacy-points">
+            <div>
+              <strong>Default mode: on-device only</strong>
+              <span>No account required. No telemetry. No server dependency.</span>
+            </div>
+            <div>
+              <strong>Export on your terms</strong>
+              <span>Download a CSV for clinicians or an encrypted backup for yourself.</span>
+            </div>
+            <div>
+              <strong>Wellness framing</strong>
+              <span>No transactions, no dispensary tie-ins, no ad-tech-shaped behavior.</span>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

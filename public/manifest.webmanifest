@@ -1,0 +1,18 @@
+{
+  "name": "Moss Journal",
+  "short_name": "Moss",
+  "description": "Private cannabis wellness tracking with local-first journaling, insights, tolerance breaks, and encrypted backup.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#101912",
+  "theme_color": "#101912",
+  "categories": ["health", "medical", "lifestyle", "wellness"],
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

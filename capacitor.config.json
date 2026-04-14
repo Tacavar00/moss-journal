@@ -1,0 +1,9 @@
+{
+  "appId": "com.tacavar.mossjournal",
+  "appName": "Moss Journal",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}
