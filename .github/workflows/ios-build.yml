@@ -1,0 +1,82 @@
+name: iOS Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build web bundle
+        run: npm run build
+
+      - name: Sync Capacitor iOS
+        run: npx cap sync ios
+
+      - name: Install CocoaPods dependencies
+        working-directory: ios/App
+        run: pod install
+
+      - name: Pick available simulator
+        id: sim
+        run: |
+          UDID=$(xcrun simctl list devices available --json \
+            | python3 -c "
+          import sys, json
+          d = json.load(sys.stdin)['devices']
+          for runtime, devs in sorted(d.items(), reverse=True):
+            if 'iOS' in runtime:
+              for dev in devs:
+                if dev.get('isAvailable') and 'iPhone' in dev['name']:
+                  print(dev['udid'])
+                  exit()
+          ")
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+          echo "Using simulator UDID: $UDID"
+
+      - name: Build for simulator (no signing)
+        run: |
+          xcodebuild \
+            -workspace ios/App/App.xcworkspace \
+            -scheme App \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.udid }}" \
+            -derivedDataPath ios/build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build | xcpretty || true
+
+      - name: Confirm .app artifact exists
+        run: |
+          APP=$(find ios/build -name "*.app" | head -1)
+          if [ -z "$APP" ]; then echo "ERROR: no .app found"; exit 1; fi
+          echo "Built: $APP"
+
+      - name: Upload .app artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MossJournal-sim-${{ github.sha }}
+          path: ios/build/Build/Products/Debug-iphonesimulator/
+          if-no-files-found: error
