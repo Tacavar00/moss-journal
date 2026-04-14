@@ -48,6 +48,9 @@ const elements = {
   importEncryptedButton: document.querySelector('#import-encrypted-button'),
   exportCsvButton: document.querySelector('#export-csv-button'),
   loadDemoButton: document.querySelector('#load-demo-button'),
+  privacyPolicyLink: document.querySelector('#privacy-policy-link'),
+  privacyPolicyModal: document.querySelector('#privacy-policy-modal'),
+  privacyPolicyClose: document.querySelector('#privacy-policy-close'),
 }
 
 initialize()
@@ -185,6 +188,21 @@ function wireForms() {
 }
 
 function wireActions() {
+  // Privacy policy modal
+  elements.privacyPolicyLink?.addEventListener('click', () => {
+    elements.privacyPolicyModal?.removeAttribute('hidden')
+  })
+
+  elements.privacyPolicyClose?.addEventListener('click', () => {
+    elements.privacyPolicyModal?.setAttribute('hidden', '')
+  })
+
+  elements.privacyPolicyModal?.addEventListener('click', (event) => {
+    if (event.target === elements.privacyPolicyModal) {
+      elements.privacyPolicyModal?.setAttribute('hidden', '')
+    }
+  })
+
   elements.loadDemoButton?.addEventListener('click', () => {
     state = createDemoState()
     persistState()

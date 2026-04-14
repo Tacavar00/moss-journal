@@ -20,12 +20,6 @@
     <meta name="apple-mobile-web-app-title" content="Moss Journal" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -462,6 +456,99 @@
           </article>
         </section>
       </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <button class="footer-link" id="privacy-policy-link">Privacy Policy</button>
+          <span class="footer-separator">•</span>
+          <span class="footer-version">v0.1.0</span>
+        </div>
+      </footer>
+
+      <section id="privacy-policy-modal" class="privacy-modal" hidden>
+        <div class="privacy-modal-content">
+          <button class="privacy-modal-close" id="privacy-policy-close">×</button>
+          <div class="privacy-modal-body">
+            <h1>Privacy Policy</h1>
+            <p><strong>Effective Date: April 2026</strong></p>
+
+            <h2>Overview</h2>
+            <p>Moss Journal is designed with privacy as a core principle. Your data belongs to you and stays on your device by default.</p>
+
+            <h2>Data Collection</h2>
+            <p><strong>What We Collect:</strong></p>
+            <ul>
+              <li>Session logs (product, strain, dose, method, time, context, notes)</li>
+              <li>Effect ratings (sleep, pain, anxiety, mood, focus)</li>
+              <li>Tolerance break information (start date, target days, goal)</li>
+              <li>Symptom logs during breaks</li>
+            </ul>
+            <p><strong>Where It's Stored:</strong></p>
+            <ul>
+              <li>All data is stored locally on your device using browser localStorage</li>
+              <li>No data is sent to our servers or any third party by default</li>
+              <li>Your data is never transmitted over the network unless you explicitly export it</li>
+            </ul>
+
+            <h2>Data Export</h2>
+            <p>You control all exports from Moss Journal:</p>
+            <ul>
+              <li><strong>JSON Export:</strong> Download your raw data as an unencrypted JSON file</li>
+              <li><strong>Encrypted Backup:</strong> Export with AES-256 encryption using a passphrase you provide</li>
+              <li><strong>Doctor CSV:</strong> Generate a clinician-friendly summary for medical consultation</li>
+            </ul>
+            <p>All exports are generated on your device. We never see the files you download.</p>
+
+            <h2>Service Worker</h2>
+            <p>Moss Journal uses a service worker to enable offline functionality. The service worker:</p>
+            <ul>
+              <li>Caches the app's resources (HTML, CSS, JavaScript) for offline use</li>
+              <li>Does not transmit any of your journal data</li>
+              <li>Can be disabled at any time through your browser or device settings</li>
+            </ul>
+
+            <h2>Third-Party Services</h2>
+            <p>Moss Journal does not use:</p>
+            <ul>
+              <li>Analytics or tracking services</li>
+              <li>Cloud storage or backup services</li>
+              <li>Advertising networks</li>
+              <li>Third-party APIs or services that process your data</li>
+            </ul>
+
+            <h2>iOS App Privacy</h2>
+            <p>When installed as an iOS app via Capacitor:</p>
+            <ul>
+              <li>All data storage and processing happens on your device</li>
+              <li>No network requests are made to external servers for your journal data</li>
+              <li>The app does not request access to camera, microphone, photos, or contacts</li>
+              <li>Offline functionality is fully supported</li>
+            </ul>
+
+            <h2>Security</h2>
+            <p>Your data security depends on:</p>
+            <ul>
+              <li><strong>Device Security:</strong> Keep your device locked and secure</li>
+              <li><strong>Encrypted Backups:</strong> Use a strong passphrase when creating encrypted exports</li>
+              <li><strong>Backup Storage:</strong> Store encrypted backups securely (not in public cloud)</li>
+            </ul>
+
+            <h2>Your Rights</h2>
+            <p>You have complete control over your data:</p>
+            <ul>
+              <li>Export your data anytime in JSON or encrypted format</li>
+              <li>Delete your data by clearing your browser's local storage or app data</li>
+              <li>No account required, no subscription, no lock-in</li>
+            </ul>
+
+            <h2>Changes to This Policy</h2>
+            <p>We will notify you of any material changes to this privacy policy through in-app notifications or by updating the effective date above.</p>
+
+            <h2>Contact</h2>
+            <p>If you have questions about this privacy policy, please contact us through the app's support channels.</p>
+          </div>
+        </div>
+      </section>
     </div>
 
     <script type="module" src="./src/app.js"></script>
