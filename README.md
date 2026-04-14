@@ -6,6 +6,8 @@ Live temporary deployment: https://tacavar.com/moss/
 
 The project includes a static `dist/` build, offline support, a web app manifest, and Capacitor configuration so it can move into App Store and Play Store packaging.
 
+A build-only macOS GitHub Actions workflow now compiles the iOS Capacitor shell in CI.
+
 ## What ships in this MVP
 
 - Local-first session logging with product, strain, dose, method, timestamp, and notes
