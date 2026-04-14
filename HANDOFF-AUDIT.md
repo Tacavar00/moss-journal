@@ -8,6 +8,7 @@ Audit the standalone Moss Journal project for product quality, privacy posture, 
 
 - Standalone repo: `https://github.com/Tacavar00/moss-journal`
 - GitHub Actions workflow: `.github/workflows/ios-build.yml`
+- iOS deployment target raised to 15.0 in `ios/App/Podfile` and Xcode project to match Capacitor iOS 8
 - Live temporary deployment: `https://tacavar.com/moss/`
 - Local project path: `/home/joshy/cannabis-wellness-journal`
 
